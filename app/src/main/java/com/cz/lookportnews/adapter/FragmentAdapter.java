@@ -1,18 +1,10 @@
 package com.cz.lookportnews.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.ImageSpan;
-import android.text.style.RelativeSizeSpan;
-
-import com.cz.lookportnews.R;
+import android.support.v4.view.PagerAdapter;
 
 import java.util.List;
 
@@ -23,7 +15,7 @@ import java.util.List;
 public class FragmentAdapter extends FragmentPagerAdapter {
 
 
-    List<Fragment> mlist;
+    List<Fragment> fragmentList;
 
     List<String> titles;
 
@@ -31,10 +23,18 @@ public class FragmentAdapter extends FragmentPagerAdapter {
 
 
 
-    public FragmentAdapter(Context context,List<Fragment> mlist,List<String> titles, FragmentManager fm) {
+    public FragmentAdapter(Context context,List<Fragment> fragmentList,List<String> titles, FragmentManager fm) {
         super(fm);
-        this.mlist =mlist;
+        this.fragmentList =fragmentList;
         this.titles=titles;
+        this.context=context;
+    }
+
+
+    public FragmentAdapter(Context context,List<Fragment> fragmentList, FragmentManager fm) {
+        super(fm);
+        this.fragmentList =fragmentList;
+
         this.context=context;
     }
 
@@ -44,21 +44,35 @@ public class FragmentAdapter extends FragmentPagerAdapter {
 
     }
 
+    /**
+     *  是为了在viewpager中，因为下一界面有类似于新闻类的标签功能，
+     *  根据选择的标签，返回本页以后，动态替换viewpager中的fragment，
+     *  解决notifyDataSetChanged（）不刷新的问题
+     * @param object
+     * @return
+     */
+    @Override
+    public int getItemPosition(Object object) {
+        return PagerAdapter.POSITION_NONE;
+    }
+
     @Override
     public Fragment getItem(int position) {
-        return mlist.get(position);
+        return fragmentList.get(position);
     }
 
     @Override
     public int getCount() {
-        return mlist.size();
+        return fragmentList.size();
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
 
+        if(titles==null){
+            return " ";
+        }
         return titles.get(position);
-
 
     }
 }

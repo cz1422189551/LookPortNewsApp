@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
 
     <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <!-- 顶部Tab-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+
+
     <com.cz.lookportnews.ui.PagerSlidingTabStrip
         android:id="@+id/pager_sliding_tab_strip"
         android:layout_width="0dp"
         android:layout_weight="15"
         android:layout_height="40dip">
     </com.cz.lookportnews.ui.PagerSlidingTabStrip>
-
         <View
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
@@ -23,38 +33,66 @@
             android:layout_width="2px"
             android:layout_height="match_parent"
             android:background="#BDBDBD"/>
-        <ImageButton
+
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_margin="8dp"
-            android:layout_height="24dip"
-            android:background="@drawable/more3"
-            android:layout_weight="1"
-            />
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="8dp"
+                android:layout_height="16dip"
+                android:background="@drawable/more_black"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginBottom="2dp"
+                android:textColor="#212121"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:textSize="8sp"
+                android:text="更多"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
+        <!--内容ViewPage-->
+
     <android.support.v4.view.ViewPager
 
         android:id="@+id/view_pager"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
         android:layout_width="match_parent"
         android:layout_below="@id/pager_sliding_tab_strip"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1">
-
     </android.support.v4.view.ViewPager>
 
+
+
+
+    </LinearLayout>
+
+
+    <!--底部Tab-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <View  android:layout_height="2px"
         android:layout_width="match_parent"
         android:background="#FFFFFF" />
 
-<LinearLayout
-    android:layout_below="@id/view_pager"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <include layout="@layout/bottom">
-
-    </include>
-
-</LinearLayout>
 
 
-</LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+

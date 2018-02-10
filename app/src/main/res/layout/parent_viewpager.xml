@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="48dp"
+    android:orientation="vertical"
     android:background="#fcfdff"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <com.cz.lookportnews.ui.NoScrollViewPager
+        android:id="@+id/no_scroll_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
+    </com.cz.lookportnews.ui.NoScrollViewPager>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"
         android:layout_marginTop="6dp">
-
-
 
 
 
@@ -27,12 +31,12 @@
             <ImageView
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:id="@+id/iv_home"
+                android:id="@+id/iv_news"
                 android:layout_gravity="center"
-                android:background="@drawable/news_icon" />
+                android:background="@drawable/news_1" />
 
             <TextView
-                android:id="@+id/tv_chat"
+                android:id="@+id/tv_news"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -53,17 +57,18 @@
             <ImageView
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:id="@+id/iv_repair"
+                android:id="@+id/iv_subscribe"
                 android:layout_gravity="center"
                 android:background="@drawable/subscribe" />
 
             <TextView
-                android:id="@+id/tv_contact"
+                android:id="@+id/tv_subscribe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="订阅"
-                android:textColor="@color/ColorPrimaryText"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
                 android:textSize="11sp" />
 
         </LinearLayout>
@@ -81,32 +86,23 @@
                 android:layout_height="22dp"
                 android:id="@+id/iv_my"
                 android:layout_gravity="center"
-                android:background="@drawable/my" />
+                android:background="@drawable/mine" />
 
             <TextView
-                android:id="@+id/tv_friend"
+                android:id="@+id/tv_mine"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
                 android:text="我的"
                 android:textColor="@color/ColorSecondaryText"
                 android:textSize="11sp" />
 
 
-
         </LinearLayout>
 
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/iv_tableline"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@drawable/tabline" />
     </LinearLayout>
 
 
