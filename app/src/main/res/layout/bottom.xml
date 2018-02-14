@@ -29,7 +29,7 @@
                 android:layout_height="22dp"
                 android:id="@+id/iv_home"
                 android:layout_gravity="center"
-                android:background="@drawable/news_icon" />
+                android:background="@drawable/news_1" />
 
             <TextView
                 android:id="@+id/tv_chat"
@@ -81,7 +81,7 @@
                 android:layout_height="22dp"
                 android:id="@+id/iv_my"
                 android:layout_gravity="center"
-                android:background="@drawable/my" />
+                android:background="@drawable/mine" />
 
             <TextView
                 android:id="@+id/tv_friend"

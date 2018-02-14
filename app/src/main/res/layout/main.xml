@@ -27,7 +27,7 @@
         android:layout_height="40dip">
     </com.cz.lookportnews.ui.PagerSlidingTabStrip>
         <View
-            android:layout_marginLeft="8dp"
+
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_width="2px"
@@ -67,15 +67,13 @@
     <android.support.v4.view.ViewPager
 
         android:id="@+id/view_pager"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_width="match_parent"
         android:layout_below="@id/pager_sliding_tab_strip"
         android:layout_height="wrap_content"
         android:layout_weight="1">
     </android.support.v4.view.ViewPager>
-
-
 
 
     </LinearLayout>

@@ -12,6 +12,15 @@ import java.io.Serializable;
 
 public class MultiMedia implements Serializable {
 
+    public static final int PHOTO = 3 ;
+
+    public static final int VIDEO = 2 ;
+
+    public static final int ONE_PHOTO  = 1 ;
+
+    public static final int  MORE_PHOTO = 4 ;
+
+
     //唯一标识
     protected  Long id ;
 
@@ -27,6 +36,43 @@ public class MultiMedia implements Serializable {
     //报道的来源
     protected String origin;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public String getContent() {
+        return Content;
+    }
+
+    public void setContent(String content) {
+        Content = content;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
 }

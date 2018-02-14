@@ -26,9 +26,13 @@ import com.cz.lookportnews.fragment.TwoFragment;
 import com.cz.lookportnews.ui.NoScrollViewPager;
 import com.cz.lookportnews.ui.PagerSlidingTabStrip;
 import com.cz.lookportnews.ui.TabPageChangeListenner;
+import com.cz.lookportnews.util.UIUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by 14221 on 2018/2/7.
@@ -36,75 +40,61 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "HomeActivity";
+
+     FragmentAdapter fragmentAdapter;
+
+     SubScribeFragment subScribeFragment;
+
+     MineFragment mineFragment;
 
 
-    private NoScrollViewPager noScrollViewPager ;
+     HomeFragment homeFragment;
+
+    @BindView(R.id.ll_news)
+    LinearLayout newsLinearLayout;
+    @BindView(R.id.ll_subscribe)
+    LinearLayout subScribeLinearLayout;
+    @BindView(R.id.ll_my)
+    LinearLayout mineLinearLayout;
 
 
-    private FragmentAdapter fragmentAdapter;
+    @BindView(R.id.no_scroll_viewpager)
+    NoScrollViewPager noScrollViewPager ;
 
+     @BindView(R.id.tv_news)
+     TextView newsTextView;
+    @BindView(R.id.tv_subscribe)
+     TextView subScribeTextView;
+    @BindView(R.id.tv_mine)
+     TextView mineTextView;
 
-    private SubScribeFragment subScribeFragment;
-
-    private MineFragment mineFragment;
-
-    private LinearLayout newsLinearLayout;
-
-    private LinearLayout subScribeLinearLayout;
-
-    private LinearLayout mineLinearLayout;
-
-    private HomeFragment homeFragment;
-
-    private TextView newsTextView;
-    private TextView subScribeTextView;
-    private TextView mineTextView;
-
-    private ImageView newsImageView;
-    private ImageView subScribeImageView;
-    private ImageView mineImageView;
+    @BindView(R.id.iv_news)
+     ImageView newsImageView;
+    @BindView(R.id.iv_subscribe)
+     ImageView subScribeImageView;
+    @BindView(R.id.iv_my)
+     ImageView mineImageView;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parent_viewpager);
-
+        ButterKnife.bind(this);
         initView();
     }
 
     private void initView() {
 
-        noScrollViewPager=(NoScrollViewPager)findViewById(R.id.no_scroll_viewpager);
-
-
-        newsLinearLayout=findViewById(R.id.ll_news);
-        subScribeLinearLayout=findViewById(R.id.ll_subscribe);
-        mineLinearLayout=findViewById(R.id.ll_my);
-        newsTextView= findViewById(R.id.tv_news);
-        subScribeTextView = findViewById(R.id.tv_subscribe);
-        mineTextView = findViewById(R.id.tv_mine);
-        TextPaint tp = newsTextView.getPaint();
-        tp.setFakeBoldText(true);
-        TextPaint tp2 = subScribeTextView.getPaint();
-        tp2.setFakeBoldText(true);
-        TextPaint tp3 = mineTextView.getPaint();
-        tp3.setFakeBoldText(true);
-
-        newsImageView = findViewById(R.id.iv_news);
-        subScribeImageView = findViewById(R.id.iv_subscribe);
-        mineImageView = findViewById(R.id.iv_my);
+        //设置底部Tab字体中文加粗
+        UIUtils.setChineseTextViewBold(newsTextView,subScribeTextView,mineTextView);
 
         //初始化切换Bottom的Tab的点击事件
         LinearLayoutListener linearLayoutListener = new LinearLayoutListener();
         newsLinearLayout.setOnClickListener(linearLayoutListener);
         subScribeLinearLayout.setOnClickListener(linearLayoutListener);
         mineLinearLayout.setOnClickListener(linearLayoutListener);
-
-
-       //FragmentAdapter的初始化
-
 
 
         //bottomViewPager
@@ -147,7 +137,6 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
 
-            //�ı�ָʾ��
             @Override
             public void onPageScrolled(int position, float offset, int arg2) {
 
@@ -185,7 +174,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     protected void resetView() {
-        // TODO Auto-generated method stub
         newsTextView.setTextColor(Color.parseColor("#757575"));
         subScribeTextView.setTextColor(Color.parseColor("#757575"));
         mineTextView.setTextColor(Color.parseColor("#757575"));
