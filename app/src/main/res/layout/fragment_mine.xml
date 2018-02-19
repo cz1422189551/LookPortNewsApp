@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.coorchice.library.SuperTextView
+            android:id="@+id/icon2"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginBottom="8dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            app:corner="50dp"
+            app:isShowState="true"
+            app:left_bottom_corner="true"
+            app:left_top_corner="true"
+            app:right_bottom_corner="true"
+            app:right_top_corner="true"
+            app:state_drawable="@drawable/zbh2"
+            app:drawableAsBackground="true"
+            />
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/icon2"
+            android:layout_marginTop="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="狮子吃咸鱼"
+            android:textStyle="bold"
+            android:textColor="@color/ColorPrimaryText"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_moon1"
+
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+               android:layout_marginLeft="40dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/moon1" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="48dp"
+                android:text="夜间模式" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/iv_a"
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/a"
+                />
+            <TextView
+
+                android:layout_marginTop="48dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="字体大小"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="64dp"
+
+                android:id="@+id/iv_download"
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/download"
+                />
+            <TextView
+
+                android:layout_marginTop="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="离线下载"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginLeft="12dp"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/my_acount" />
+            <TextView
+                android:id="@+id/tv_my_acount"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ColorPrimaryText"
+                android:textSize="16sp"
+                android:text="我的账户"/>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_marginLeft="235dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/open"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:background="@color/ColorDividerColor2"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

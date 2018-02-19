@@ -68,7 +68,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="订阅"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
+
                 android:textSize="11sp" />
 
         </LinearLayout>

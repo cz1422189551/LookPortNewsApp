@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/frg_head" />
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/store_house_ptr_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <!-- 搜索框 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <com.coorchice.library.SuperTextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="40dp"
+            android:text="请输入关键词"
+            android:textSize="11sp"
+            app:corner="25dp"
+            app:isShowState="true"
+            app:left_bottom_corner="true"
+            app:left_top_corner="true"
+            app:right_bottom_corner="true"
+            app:right_top_corner="true"
+            app:solid="#F0F1F4"
+            app:state_drawable="@drawable/search"
+            app:state_drawable_height="16dp"
+            app:state_drawable_mode="left"
+            app:state_drawable_padding_left="16dp"
+            app:state_drawable_width="16dp"
+            app:stroke_color="#1111"
+            app:text_fill_color="#C7C7C8"
+          />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
 
 </LinearLayout>

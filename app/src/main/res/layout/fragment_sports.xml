@@ -23,8 +23,6 @@
           </android.support.v7.widget.RecyclerView>
 
 
-
-
         </LinearLayout>
 
     </in.srain.cube.views.ptr.PtrClassicFrameLayout>

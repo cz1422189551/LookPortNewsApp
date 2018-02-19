@@ -15,11 +15,11 @@ public class MineFragment extends LazyFragment {
 
     @Override
     protected int getLayout() {
-        return R.layout.frg_my;
+        return R.layout.fragment_mine;
     }
 
     @Override
     protected void initViews(View view) {
-        textView = view.findViewById(R.id.tv_1);
+
     }
 }

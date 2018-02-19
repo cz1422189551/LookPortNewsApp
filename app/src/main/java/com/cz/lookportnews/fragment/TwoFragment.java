@@ -3,6 +3,7 @@ package com.cz.lookportnews.fragment;
 import android.view.View;
 import android.widget.TextView;
 
+import com.coorchice.library.SuperTextView;
 import com.cz.lookportnews.R;
 
 /**
@@ -11,15 +12,15 @@ import com.cz.lookportnews.R;
 
 public class TwoFragment extends LazyFragment {
 
-    private TextView textView;
+    private SuperTextView superTextView;
 
     @Override
     protected int getLayout() {
-        return R.layout.fragment2;
+        return R.layout.fragment_subscribe;
     }
 
     @Override
     protected void initViews(View view) {
-        textView = view.findViewById(R.id.tv_1);
+//        superTextView = view.findViewById(R.id.tv_1);
     }
 }

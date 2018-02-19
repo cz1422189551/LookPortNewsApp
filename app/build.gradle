@@ -37,10 +37,17 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'in.srain.cube:ptr-load-more:1.0.6'
 
+    compile 'com.github.chenBingX:SuperTextView:v1.4'
+
     compile 'com.android.support:recyclerview-v7:26.1.0'
 
 
     implementation 'com.classic.adapter:commonadapter:2.0'
+
+
+
+    compile 'com.github.chenBingX:SuperTextView:v2.0'
+
 
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')

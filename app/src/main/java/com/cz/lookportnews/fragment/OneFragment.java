@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import com.cz.lookportnews.R;
 import com.cz.lookportnews.adapter.MultipleLayoutAadapter;
 import com.cz.lookportnews.entity.News;
+import com.cz.lookportnews.util.UIUtils;
 
 
 import java.util.ArrayList;
@@ -58,15 +59,7 @@ public class OneFragment extends LazyFragment {
 
     private void loadData(){
 
-
-
-        storeHousePtrFrame.setResistance(1.7f);
-        storeHousePtrFrame.setRatioOfHeaderHeightToRefresh(1.2f);
-        storeHousePtrFrame.setDurationToClose(200);
-        storeHousePtrFrame.setDurationToCloseHeader(2000);
-        storeHousePtrFrame.setDurationToCloseFooter(2000);
-        storeHousePtrFrame.setPullToRefresh(false);
-        storeHousePtrFrame.setKeepHeaderWhenRefresh(true);
+        UIUtils.initPrtClassLayout(storeHousePtrFrame);
 
 //        /**
 //         * 经典 风格的头部实现

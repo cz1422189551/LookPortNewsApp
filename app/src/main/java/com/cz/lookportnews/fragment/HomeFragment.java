@@ -52,7 +52,7 @@ public class HomeFragment extends LazyFragment {
 
     @Override
     protected int getLayout() {
-        return R.layout.main;
+        return R.layout.fragment_home;
     }
 
     @Override
@@ -72,6 +72,7 @@ public class HomeFragment extends LazyFragment {
         ThreeFragment threeFragment4 = new ThreeFragment();
         ThreeFragment  threeFragment5 = new ThreeFragment();
         ThreeFragment threeFragment6 = new ThreeFragment();
+
         List<Fragment>  fragmentList = new ArrayList<>();
         fragmentList.add(oneFragment);
         fragmentList.add(twoFragment);
@@ -100,7 +101,7 @@ public class HomeFragment extends LazyFragment {
         pagerSlidingTabStrip.setViewPager(tabViewPager);
         pagerSlidingTabStrip.setShouldExpand(false);
         pagerSlidingTabStrip.setDividerColor(Color.WHITE);
-        pagerSlidingTabStrip.setIndicatorHeight(6);
+        pagerSlidingTabStrip.setIndicatorHeight(5);
         pagerSlidingTabStrip.setUnderlineHeight(0);
         pagerSlidingTabStrip.setIndicatorColorResource(R.color.ColorPrimaryColor);
 
