@@ -38,18 +38,17 @@ import butterknife.ButterKnife;
  * Created by 14221 on 2018/2/7.
  */
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BasActivity {
 
     private static final String TAG = "HomeActivity";
 
-     FragmentAdapter fragmentAdapter;
+    FragmentAdapter fragmentAdapter;
 
-     SubScribeFragment subScribeFragment;
+    SubScribeFragment subScribeFragment;
 
-     MineFragment mineFragment;
+    MineFragment mineFragment;
 
-
-     HomeFragment homeFragment;
+    HomeFragment homeFragment;
 
     @BindView(R.id.ll_news)
     LinearLayout newsLinearLayout;
@@ -58,37 +57,37 @@ public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.ll_my)
     LinearLayout mineLinearLayout;
 
-
     @BindView(R.id.no_scroll_viewpager)
-    NoScrollViewPager noScrollViewPager ;
+    NoScrollViewPager noScrollViewPager;
 
-     @BindView(R.id.tv_news)
-     TextView newsTextView;
+    @BindView(R.id.tv_news)
+    TextView newsTextView;
     @BindView(R.id.tv_subscribe)
-     TextView subScribeTextView;
+    TextView subScribeTextView;
     @BindView(R.id.tv_mine)
-     TextView mineTextView;
+    TextView mineTextView;
 
     @BindView(R.id.iv_news)
-     ImageView newsImageView;
+    ImageView newsImageView;
     @BindView(R.id.iv_subscribe)
-     ImageView subScribeImageView;
+    ImageView subScribeImageView;
     @BindView(R.id.iv_my)
-     ImageView mineImageView;
-
+    ImageView mineImageView;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.parent_viewpager);
-        ButterKnife.bind(this);
-        initView();
+    public int getLayout() {
+        return R.layout.parent_viewpager;
     }
 
-    private void initView() {
+    @Override
+    public AppCompatActivity getActivity() {
+        return this;
+    }
 
-        //设置底部Tab字体中文加粗
-        UIUtils.setChineseTextViewBold(newsTextView,subScribeTextView,mineTextView);
+    @Override
+    public void initViews() {
+       //设置底部Tab字体中文加粗
+        UIUtils.setChineseTextViewBold(newsTextView, subScribeTextView, mineTextView);
 
         //初始化切换Bottom的Tab的点击事件
         LinearLayoutListener linearLayoutListener = new LinearLayoutListener();
@@ -99,7 +98,7 @@ public class HomeActivity extends AppCompatActivity {
 
         //bottomViewPager
         homeFragment = new HomeFragment();
-        subScribeFragment  = new SubScribeFragment();
+        subScribeFragment = new SubScribeFragment();
         mineFragment = new MineFragment();
 
         List<Fragment> bottomFragment = new ArrayList<>();
@@ -107,7 +106,7 @@ public class HomeActivity extends AppCompatActivity {
         bottomFragment.add(subScribeFragment);
         bottomFragment.add(mineFragment);
 
-        fragmentAdapter = new FragmentAdapter(this,bottomFragment,getSupportFragmentManager());
+        fragmentAdapter = new FragmentAdapter(this, bottomFragment, getSupportFragmentManager());
         noScrollViewPager.setAdapter(fragmentAdapter);
         noScrollViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -146,6 +145,10 @@ public class HomeActivity extends AppCompatActivity {
             public void onPageScrollStateChanged(int arg0) {
             }
         });
+    }
+
+    @Override
+    public void loadData() {
 
     }
 
@@ -154,7 +157,7 @@ public class HomeActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.ll_news:
-                   noScrollViewPager.setCurrentItem(0);
+                    noScrollViewPager.setCurrentItem(0);
                     break;
                 case R.id.ll_subscribe:
                     noScrollViewPager.setCurrentItem(1);

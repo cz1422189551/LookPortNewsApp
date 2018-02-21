@@ -40,6 +40,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <ImageButton
+                android:id="@+id/ib_more"
                 android:layout_width="20dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginLeft="12dp"

@@ -5,15 +5,20 @@ import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.ImageButton;
 
 import com.cz.lookportnews.R;
+import com.cz.lookportnews.activity.BasActivity;
+import com.cz.lookportnews.activity.ChannelActivity;
 import com.cz.lookportnews.adapter.FragmentAdapter;
 import com.cz.lookportnews.ui.PagerSlidingTabStrip;
 import com.cz.lookportnews.ui.TabPageChangeListenner;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by 14221 on 2018/2/7.
@@ -24,11 +29,14 @@ public class HomeFragment extends LazyFragment {
 
     private static final String TAG = "HomeFragment";
 
-    private ViewPager tabViewPager ;
+    @BindView(R.id.view_pager)
+     ViewPager tabViewPager ;
 
-    private FragmentAdapter tabFragmentAdapter;
+    @BindView(R.id.pager_sliding_tab_strip)
+     PagerSlidingTabStrip pagerSlidingTabStrip;
 
-    private PagerSlidingTabStrip pagerSlidingTabStrip;
+     FragmentAdapter tabFragmentAdapter;
+
 
     private TabPageChangeListenner tabPageChangeListenner;
 
@@ -38,17 +46,8 @@ public class HomeFragment extends LazyFragment {
 
     private ThreeFragment threeFragment;
 
-
-    private SubScribeFragment subScribeFragment;
-
-    private MineFragment mineFragment;
-
-    private LinearLayout newsLinearLayout;
-
-    private LinearLayout subScribeLinearLayout;
-
-    private LinearLayout mineLinearLayout;
-
+    @BindView(R.id.ib_more)
+     ImageButton imageButton ;
 
     @Override
     protected int getLayout() {
@@ -57,13 +56,6 @@ public class HomeFragment extends LazyFragment {
 
     @Override
     protected void initViews(View view) {
-        tabViewPager = (ViewPager)view.findViewById(R.id.view_pager);
-
-        pagerSlidingTabStrip = view.findViewById(R.id.pager_sliding_tab_strip);
-
-        newsLinearLayout=view.findViewById(R.id.ll_news);
-        subScribeLinearLayout=view.findViewById(R.id.ll_subscribe);
-        mineLinearLayout=view.findViewById(R.id.ll_my);
 
         oneFragment = new OneFragment();
         twoFragment = new TwoFragment();
@@ -111,5 +103,8 @@ public class HomeFragment extends LazyFragment {
         tabPageChangeListenner.updateTextStyle(tabViewPager.getCurrentItem());
     }
 
-
+    @OnClick(R.id.ib_more)
+    public void onClick (){
+        BasActivity.startToActivity(getActivity(), ChannelActivity.class);
+    }
 }

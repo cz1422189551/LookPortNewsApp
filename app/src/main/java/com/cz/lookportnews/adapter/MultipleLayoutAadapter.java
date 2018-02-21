@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.classic.adapter.BaseAdapterHelper;
 import com.classic.adapter.CommonAdapter;
@@ -32,6 +34,7 @@ public class MultipleLayoutAadapter extends CommonRecyclerAdapter<News> {
     @Override
     public void onCreate(RecyclerView.ViewHolder viewHolder, BaseAdapterHelper helper) {
         super.onCreate(viewHolder, helper);
+
     }
 
     @Override

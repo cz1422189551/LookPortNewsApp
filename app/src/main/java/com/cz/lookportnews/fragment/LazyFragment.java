@@ -8,6 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Created by dasu on 2016/9/27.
  * https://github.com/woshidasusu/Meizi
@@ -18,6 +22,9 @@ import android.view.ViewGroup;
  * @see #onFragmentVisibleChange(boolean)
  */
 public abstract class LazyFragment extends Fragment {
+
+    protected Unbinder unbinder ;
+
     private static final String TAG = "LazyFragment";
 
     /**`
@@ -41,12 +48,14 @@ public abstract class LazyFragment extends Fragment {
         if(rootView==null)
         {
             rootView=inflater.inflate(getLayout(),container,false);
+            ButterKnife.bind(this,rootView);
             initViews(rootView);
             return rootView;
         }
         return rootView;
     }
     protected abstract int getLayout();
+
     protected abstract void initViews(View view);
 
     @Override
@@ -107,5 +116,12 @@ public abstract class LazyFragment extends Fragment {
      */
     protected  void onFragmentVisibleChange(boolean isVisible) {
         Log.w(getTag(), "onFragmentVisibleChange -> isVisible: " + isVisible);
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
     }
 }

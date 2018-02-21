@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/bg_channel_p" android:state_pressed="true">
+        <shape>
+            <corners android:radius="1dp" />
+            <solid android:color="@color/ColorPrimaryText" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/ColorDividerColor" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/bg_channel_p" android:state_selected="true">
+        <shape>
+            <corners android:radius="1dp" />
+            <solid android:color="@color/ColorPrimaryText" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/ColorDividerColor" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/bg_channel_n">
+        <shape>
+            <corners android:radius="1dp" />
+            <solid android:color="@color/ColorPrimaryText" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/ColorDividerColor" />
+        </shape>
+    </item>
+
+</selector>

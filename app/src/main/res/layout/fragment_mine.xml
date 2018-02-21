@@ -5,6 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
     <RelativeLayout
 
         android:layout_width="match_parent"
@@ -53,7 +64,7 @@
             <ImageView
                 android:id="@+id/iv_moon1"
 
-                android:layout_width="24dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                android:layout_marginLeft="40dp"
                 android:layout_marginTop="8dp"
@@ -79,7 +90,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/iv_a"
-                android:layout_width="24dp"
+                android:layout_width="16dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/a"
                 />
@@ -103,7 +114,7 @@
                 android:layout_marginLeft="64dp"
 
                 android:id="@+id/iv_download"
-                android:layout_width="24dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/download"
                 />
@@ -120,7 +131,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
 
@@ -129,8 +140,10 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp">
 
             <ImageView
                 android:layout_marginLeft="12dp"
@@ -165,12 +178,278 @@
         <View
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
-            android:layout_height="1.5px"
+            android:layout_height="1px"
             android:background="@color/ColorDividerColor2"/>
 
     </LinearLayout>
 
 
+    <LinearLayout
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginLeft="12dp"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shoppingbag" />
+            <TextView
+
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ColorPrimaryText"
+                android:textSize="16sp"
+                android:text="我的购买"/>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_marginLeft="235dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/open"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/ColorDividerColor2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginLeft="12dp"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/collection" />
+            <TextView
+
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ColorPrimaryText"
+                android:textSize="16sp"
+                android:text="我的收藏"/>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_marginLeft="235dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/open"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/ColorDividerColor2"/>
+
+    </LinearLayout>
+    <LinearLayout
+
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginLeft="12dp"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/comment" />
+        <TextView
+
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ColorPrimaryText"
+            android:textSize="16sp"
+            android:text="我的评论"/>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_marginLeft="235dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/open"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/ColorDividerColor2"/>
+
+</LinearLayout>
+    <LinearLayout
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginLeft="12dp"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/record" />
+            <TextView
+
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ColorPrimaryText"
+                android:textSize="16sp"
+                android:text="阅读记录"/>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_marginLeft="235dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/open"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/ColorDividerColor2"/>
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginLeft="12dp"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/setting" />
+            <TextView
+
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ColorPrimaryText"
+                android:textSize="16sp"
+                android:text="设置"/>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_marginLeft="267dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/open"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/ColorDividerColor2"/>
+
+    </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 
 

@@ -1,3 +1,17 @@
+package com.cz.lookportnews.activity;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 //package com.cz.lookportnews.activity;
 //
 //import android.os.Bundle;
@@ -13,37 +27,65 @@
 //import model.ResultBean;
 //
 ///**
-// * Created by hsp on 2017/4/19.
+// * Created by cz on 2018/2/20.
 // */
 //
-//public abstract  class BasActivity extends AppCompatActivity {
-//
-//
-//    private SVProgressHUD svProgressHUD;
-//    private WaterDropListView waterDropListView;
-//
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-//        super.onCreate(savedInstanceState, persistentState);
-//        intViews();
-//        inViewProgrss();
-//    }
-//    public abstract  void intViews();
-//
-//    protected  void inViewProgrss()
-//    {
-//        svProgressHUD = new SVProgressHUD(this);
-//        svProgressHUD.showWithStatus("加载中");
-//    }
-//
-//    public abstract  void queryFromServer();
-//
-//    protected  void updateView()
-//    {
-//
-//    }
-//
-//
-//
-//
-//}
+public abstract  class BasActivity extends AppCompatActivity {
+
+
+
+    private Unbinder unbinder ;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        loadActivity();
+
+    }
+
+    private  void loadActivity(){
+        setContentView(getLayout());
+        ButterKnife.bind(getActivity());
+        initViews();
+    }
+    public abstract int getLayout();
+
+    public abstract AppCompatActivity getActivity();
+
+    public abstract void initViews();
+
+    public abstract void loadData();
+
+    public static void  startToActivity(Activity activity, Class intentActivity){
+        Intent intent = new Intent();
+        intent.setClass(activity,intentActivity);
+        activity.startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(unbinder!=null) {
+            Log.d(this.getActivity().getClass().getSimpleName(), "onDestroy: 解绑");
+            unbinder.unbind();
+        }
+        super.onDestroy();
+    }
+
+
+    /**
+     *携带数据的页面跳转
+     * @param clz
+     * @param bundle
+     */
+    public void startActivity(Class<?> clz, Bundle bundle) {
+        Intent intent = new Intent();
+        intent.setClass(this, clz);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivity(intent);
+    }
+
+}
+
+

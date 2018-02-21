@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">LookPortNews</string>
+    <string name="tip_drag">长按编辑,拖拽排序</string>
+    <string name="my_cahnnel">我的频道</string>
+    <string name="other_channel">其他频道</string>
+    <string name="edit">编辑</string>
+    <string name="finish">完成</string>
+
+    <string name="fontMedium">14</string>
+    <string name="fontSmall">12</string>
+    <string name="fontBig">16</string>
 </resources>

@@ -10,8 +10,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -32,6 +32,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.SearchActivity"/>
+        <activity android:name=".activity.ChannelActivity"
+            android:launchMode="singleTask" />
+
+        <activity android:name=".activity.DetailActivity"
+            android:launchMode="singleTask"/>
 
     </application>
 

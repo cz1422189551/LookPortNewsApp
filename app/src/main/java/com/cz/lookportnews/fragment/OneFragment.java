@@ -10,7 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.classic.adapter.CommonRecyclerAdapter;
 import com.cz.lookportnews.R;
+import com.cz.lookportnews.activity.BasActivity;
+import com.cz.lookportnews.activity.DetailActivity;
 import com.cz.lookportnews.adapter.MultipleLayoutAadapter;
 import com.cz.lookportnews.entity.News;
 import com.cz.lookportnews.util.UIUtils;
@@ -39,9 +42,9 @@ public class OneFragment extends LazyFragment {
 
     private static final String TAG = "OneFragment";
 
-    LinearLayout storeHousePtrImageContent;
+    @BindView(R.id.store_house_ptr_frame)
     PtrClassicFrameLayout storeHousePtrFrame;
-    Unbinder unbinder;
+    @BindView(R.id.rv_sports)
     RecyclerView recycleView;
     MultipleLayoutAadapter adapter;
 
@@ -52,8 +55,6 @@ public class OneFragment extends LazyFragment {
 
     @Override
     protected void initViews(View view) {
-        storeHousePtrFrame = view.findViewById(R.id.store_house_ptr_frame);
-        recycleView = view.findViewById(R.id.rv_sports);
         loadData();
     }
 
@@ -66,10 +67,8 @@ public class OneFragment extends LazyFragment {
 //         */
         final PtrClassicDefaultHeader header = new PtrClassicDefaultHeader(getActivity());
         header.setPadding(0, PtrLocalDisplay.dp2px(15), 0, 0);
-
         storeHousePtrFrame.setHeaderView(header);
         storeHousePtrFrame.addPtrUIHandler(header);
-
         storeHousePtrFrame.disableWhenHorizontalMove(true);//如果是ViewPager，设置为true，会解决ViewPager滑动冲突问题。
         storeHousePtrFrame.setPtrHandler(new PtrDefaultHandler2() {
             @Override
@@ -82,7 +81,6 @@ public class OneFragment extends LazyFragment {
                         frame.refreshComplete();
                     }
                 }, 1000);
-
             }
 
             @Override
@@ -125,12 +123,17 @@ public class OneFragment extends LazyFragment {
         newsList.add(news2);
         Log.d(TAG, "loadData: "+recycleView);
         adapter = new MultipleLayoutAadapter(getActivity(),R.layout.base_item,newsList);
-
+        adapter.setOnItemClickListener(new CommonRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(RecyclerView.ViewHolder viewHolder, View view, int position) {
+                Log.d(TAG, "onItemClick: " +position);
+                BasActivity.startToActivity(getActivity(), DetailActivity.class);
+            }
+        });
         recycleView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recycleView.setHasFixedSize(true);
         recycleView.setItemAnimator(new DefaultItemAnimator());
         recycleView.setAdapter(adapter);
-
     }
 
 

@@ -2,17 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="40dp">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:gravity="center_vertical"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/ColorPrimaryText"
-        android:text="推荐订阅"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:id="@+id/tx_head"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/ColorPrimaryText"
+            android:text="推荐订阅"
+            />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_head_x"
+            android:layout_alignRight="@id/tx_head"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/x_black"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/ColorDividerColor2"/>
+
+
 
 </LinearLayout>

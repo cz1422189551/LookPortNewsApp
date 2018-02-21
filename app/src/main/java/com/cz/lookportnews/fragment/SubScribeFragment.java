@@ -1,13 +1,17 @@
 package com.cz.lookportnews.fragment;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.coorchice.library.SuperTextView;
 import com.cz.lookportnews.R;
+import com.cz.lookportnews.activity.SearchActivity;
 import com.cz.lookportnews.util.UIUtils;
+import com.jakewharton.rxbinding2.view.RxView;
 
+import butterknife.BindView;
 import in.srain.cube.views.ptr.PtrClassicDefaultHeader;
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
@@ -23,11 +27,12 @@ public class SubScribeFragment extends LazyFragment {
 
     private static final String TAG = "SubScribeFragment";
 
-    private SuperTextView superTextView;
-
+    @BindView(R.id.stv_search)
+    SuperTextView superTextView;
+    @BindView(R.id.tx_head)
+    TextView headTextView;
+    @BindView(R.id.store_house_ptr_frame)
     PtrClassicFrameLayout storeHousePtrFrame;
-
-
 
     @Override
     protected int getLayout() {
@@ -36,8 +41,17 @@ public class SubScribeFragment extends LazyFragment {
 
     @Override
     protected void initViews(View view) {
-        storeHousePtrFrame = view.findViewById(R.id.store_house_ptr_frame);
 
+        headTextView.setText("推荐订阅");
+
+        superTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), SearchActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
         UIUtils.initPrtClassLayout(storeHousePtrFrame);
 
 //        /**
