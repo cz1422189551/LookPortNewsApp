@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
-        android:textColor="@color/ColorPrimaryText"
+        android:textColor="@color/colorPrimaryText"
         android:text="推荐频道"
         android:textSize="16sp"/>
 
@@ -24,6 +24,7 @@
         android:layout_toRightOf="@id/tv"
         android:layout_centerVertical="true"
         android:text="点击添加频道"
+        android:textColor="@color/ColorDividerColor"
         android:textSize="12sp"/>
 
     <View

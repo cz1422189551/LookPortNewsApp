@@ -1,42 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:layout_marginRight="8dp"
-    android:layout_marginLeft="8dp"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <LinearLayout
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6">
 
-        <ListView
-            android:id="@+id/lv_detail"
+        <in.srain.cube.views.ptr.PtrClassicFrameLayout
+            android:id="@+id/pfl_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </ListView>
+            <ListView
+                android:id="@+id/lv_detail"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ListView>
+
+        </in.srain.cube.views.ptr.PtrClassicFrameLayout>
 
     </LinearLayout>
 
 
     <LinearLayout
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:id="@+id/ll_detail_bottom"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="36dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
 
-            android:layout_gravity="center"
+        <ImageView
+            android:id="@+id/ib_returns"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back"/>
+            android:layout_gravity="center"
+            android:src="@drawable/back" />
         <com.coorchice.library.SuperTextView
             android:id="@+id/stv_search"
             android:layout_width="0dp"
@@ -57,9 +70,9 @@
             app:right_bottom_corner="true"
             app:right_top_corner="true"
             app:solid="@color/WhiteGey"
-            android:textColor="@color/ColorPrimaryText"
-            app:stroke_color="@color/ColorPrimaryText"
-            app:text_fill_color="@color/ColorPrimaryText"
+            android:textColor="@color/colorPrimaryText"
+            app:stroke_color="@color/colorPrimaryText"
+            app:text_fill_color="@color/colorPrimaryText"
             />
         <LinearLayout
             android:layout_width="0dp"
@@ -67,6 +80,7 @@
             android:layout_weight="2">
 
             <ImageView
+                android:id="@+id/iv_bottom_comment"
                 android:layout_gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

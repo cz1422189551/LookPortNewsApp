@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LookPortNews.iml" filepath="$PROJECT_DIR$/LookPortNews.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.cz.lookportnews/com.cz.lookportnews.iml" filepath="$PROJECT_DIR$/com.cz.lookportnews/com.cz.lookportnews.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonrecyclerlib/commonrecyclerlib.iml" filepath="$PROJECT_DIR$/commonrecyclerlib/commonrecyclerlib.iml" />
     </modules>
   </component>

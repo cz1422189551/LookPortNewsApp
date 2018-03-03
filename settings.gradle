@@ -1,1 +1,1 @@
-include ':app', ':commonrecyclerlib'
+include ':app', ':commonrecyclerlib', ':com.cz.lookportnews'

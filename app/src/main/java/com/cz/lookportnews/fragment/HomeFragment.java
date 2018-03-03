@@ -92,10 +92,10 @@ public class HomeFragment extends LazyFragment {
         //Tab控件的属性的初始化
         pagerSlidingTabStrip.setViewPager(tabViewPager);
         pagerSlidingTabStrip.setShouldExpand(false);
-        pagerSlidingTabStrip.setDividerColor(Color.WHITE);
+    //    pagerSlidingTabStrip.setDividerColorResource(R.color.colorPrimary);
         pagerSlidingTabStrip.setIndicatorHeight(5);
         pagerSlidingTabStrip.setUnderlineHeight(0);
-        pagerSlidingTabStrip.setIndicatorColorResource(R.color.ColorPrimaryColor);
+        pagerSlidingTabStrip.setIndicatorColorResource(R.color.ColorHeadColor);
 
         //TabViewPager滑动监听器实现初始化,被选中的Tab字体将样式被改变.
         tabPageChangeListenner  = new TabPageChangeListenner(getActivity(),pagerSlidingTabStrip);

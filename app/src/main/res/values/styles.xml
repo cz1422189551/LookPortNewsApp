@@ -8,6 +8,57 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- PopupWindow弹出/隐藏动画 12-28 -->
+
+    <style name="MyPopupWindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_show_anim</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_hidden_anim</item>
+    </style>
+
+
+    <style name="inputDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+            
+        <item name="android:windowBackground">@color/WhiteGey</item>
+            <!--背景-->
+            
+        <item name="android:windowFrame">@null</item>
+            <!--设置无边框-->
+            
+        <item name="android:windowNoTitle">true</item>
+            <!-- 无标题 -->
+            
+        <item name="android:backgroundDimEnabled">true</item>
+            <!-- 模糊 -->
+            
+        <item name="android:windowSoftInputMode">stateAlwaysVisible</item>
+            <!--显示软件盘-->
+          
+    </style>
+
+
+    <style name="Default_TextSize_Small">
+        <item name="textSizeSmall">@dimen/tset_small</item>
+        <item name="textSizeMedium">@dimen/tset_small</item>
+        <item name="textSizeLarge">@dimen/tset_small</item>
+        <item name="textSizeDefault">@dimen/tset_small</item>
+    </style>
+
+
+    <style name="Default_TextSize_Medium">
+
+    <item name="textSizeSmall">@dimen/tset_small2</item>
+    <item name="textSizeMedium">@dimen/tset_small2</item>
+    <item name="textSizeLarge">@dimen/tset_small2</item>
+    <item name="textSizeDefault">@dimen/tset_small2</item>
+    </style>
+
+    <style name="Default_TextSize_Large">
+        <item name="textSizeSmall">@dimen/tset_small3</item>
+        <item name="textSizeMedium">@dimen/tset_small3</item>
+        <item name="textSizeLarge">@dimen/tset_small3</item>
+        <item name="textSizeDefault">@dimen/tset_small3</item>
+
+    </style>
 
 
 </resources>

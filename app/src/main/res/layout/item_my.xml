@@ -17,7 +17,7 @@
         android:background="@drawable/bg_channel"
         android:foreground="?attr/selectableItemBackground"
         android:layout_centerInParent="true"
-        android:textColor="@color/ColorPrimaryText"
+        android:textColor="@color/colorPrimaryText"
         android:textSize="16sp"
         android:gravity="center"/>
 

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
-        android:textColor="@color/ColorPrimaryText"
+        android:textColor="@color/colorPrimaryText"
         android:text="@string/my_cahnnel"
         android:textSize="16sp"/>
 
@@ -22,6 +22,7 @@
         android:layout_toRightOf="@id/tv"
         android:layout_centerVertical="true"
         android:text="点击进入频道"
+        android:textColor="@color/ColorDividerColor2"
         android:textSize="12sp"/>
 
     <TextView

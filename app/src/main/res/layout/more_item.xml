@@ -13,7 +13,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
-                android:textColor="#383838"
+                android:textColor="@color/colorPrimaryText"
                 android:text="标题"
                 />
         </LinearLayout>
@@ -73,7 +73,7 @@
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/ColorDividerColor">
+            android:background="@color/ColorDividerColor2">
 
         </View>
     </LinearLayout>

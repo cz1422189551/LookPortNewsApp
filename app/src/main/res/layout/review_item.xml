@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/WhiteGey"
+    android:descendantFocusability="beforeDescendants"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginBottom="8dp"
+            android:id="@+id/tv_item_reviewer"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText"
+            android:text="HelloWorld83 :我觉得,谁家粉丝还没有几个脑残粉呢？对吧，你想想，万一不是罗晋的粉丝呢"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_review_more"
+        android:visibility="gone"
+        android:layout_marginLeft="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_item_checkmore"
+            android:focusable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/ColorDividerColor"
+            android:text="查看全部4条评论"/>
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/zhankaipng"/>
+    </LinearLayout>
+
+</LinearLayout>

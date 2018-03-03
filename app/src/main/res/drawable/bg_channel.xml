@@ -4,7 +4,7 @@
     <item android:drawable="@drawable/bg_channel_p" android:state_pressed="true">
         <shape>
             <corners android:radius="1dp" />
-            <solid android:color="@color/ColorPrimaryText" />
+            <solid android:color="@color/colorPrimaryText" />
             <stroke
                 android:width="2dp"
                 android:color="@color/ColorDividerColor" />
@@ -13,7 +13,7 @@
     <item android:drawable="@drawable/bg_channel_p" android:state_selected="true">
         <shape>
             <corners android:radius="1dp" />
-            <solid android:color="@color/ColorPrimaryText" />
+            <solid android:color="@color/colorPrimaryText" />
             <stroke
                 android:width="2dp"
                 android:color="@color/ColorDividerColor" />
@@ -23,7 +23,7 @@
         android:drawable="@drawable/bg_channel_n">
         <shape>
             <corners android:radius="1dp" />
-            <solid android:color="@color/ColorPrimaryText" />
+            <solid android:color="@color/colorPrimaryText" />
             <stroke
                 android:width="2dp"
                 android:color="@color/ColorDividerColor" />

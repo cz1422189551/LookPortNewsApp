@@ -10,12 +10,15 @@ import android.widget.TextView;
 
 import com.cz.lookportnews.R;
 
+import skin.support.SkinCompatManager;
+import skin.support.widget.SkinCompatSupportable;
+
 /**
  * Created by Cz on 2018/2/7.
  *  TabViewPage滑动的时候 选中时候 , 字体 , 颜色 改变.
  */
 
-public class TabPageChangeListenner implements ViewPager.OnPageChangeListener {
+public class TabPageChangeListenner implements ViewPager.OnPageChangeListener ,SkinCompatSupportable {
 
     private Context context;
 
@@ -51,11 +54,16 @@ public class TabPageChangeListenner implements ViewPager.OnPageChangeListener {
             TextView textView = (TextView) tabsContainer.getChildAt(i);
             if(position == i) {
                 textView.setTextSize(17);
-                textView.setTextColor(context.getResources().getColor(R.color.ColorPrimaryText));
+                if("night.skin".equals(SkinCompatManager.getInstance().getCurSkinName())){
+
+                }else {
+                    textView.setTextColor(context.getResources().getColor(R.color.colorPrimaryText));
+                }
+
             } else {
                 textView.setTextSize(16);
 
-                textView.setTextColor(context.getResources().getColor(R.color.ColorSecondaryText));
+                textView.setTextColor(context.getResources().getColor(R.color.colorSecondText));
             }
         }
     }
@@ -74,15 +82,20 @@ public class TabPageChangeListenner implements ViewPager.OnPageChangeListener {
                 if (i == position) {
 
                     //选中颜色
-                    imageButton.setImageTintList(context.getResources().getColorStateList(R.color.ColorPrimaryColor));
+                    imageButton.setImageTintList(context.getResources().getColorStateList(R.color.ColorHeadColor));
 
                 } else {
 
                     //没选中颜色
-                    imageButton.setImageTintList(context.getResources().getColorStateList(R.color.ColorPrimaryText));
+                    imageButton.setImageTintList(context.getResources().getColorStateList(R.color.colorPrimaryText));
 
                 }
             }
         }
+    }
+
+    @Override
+    public void applySkin() {
+
     }
 }

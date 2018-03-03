@@ -61,15 +61,7 @@ public class OneFragment extends LazyFragment {
     private void loadData(){
 
         UIUtils.initPrtClassLayout(storeHousePtrFrame);
-
-//        /**
-//         * 经典 风格的头部实现
-//         */
-        final PtrClassicDefaultHeader header = new PtrClassicDefaultHeader(getActivity());
-        header.setPadding(0, PtrLocalDisplay.dp2px(15), 0, 0);
-        storeHousePtrFrame.setHeaderView(header);
-        storeHousePtrFrame.addPtrUIHandler(header);
-        storeHousePtrFrame.disableWhenHorizontalMove(true);//如果是ViewPager，设置为true，会解决ViewPager滑动冲突问题。
+        UIUtils.setPrtClassLayoutHeadView(storeHousePtrFrame,getActivity());
         storeHousePtrFrame.setPtrHandler(new PtrDefaultHandler2() {
             @Override
             public void onLoadMoreBegin(final PtrFrameLayout frame) {

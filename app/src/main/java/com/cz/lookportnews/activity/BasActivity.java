@@ -9,8 +9,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.cz.lookportnews.R;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import skin.support.annotation.Skinable;
+import skin.support.app.SkinActivityLifecycle;
+import skin.support.app.SkinCompatActivity;
 
 //package com.cz.lookportnews.activity;
 //
@@ -30,15 +35,26 @@ import butterknife.Unbinder;
 // * Created by cz on 2018/2/20.
 // */
 //
-public abstract  class BasActivity extends AppCompatActivity {
+@Skinable
+public abstract  class BasActivity extends AppCompatActivity{
 
 
+    public static  int states = 1 ;
 
     private Unbinder unbinder ;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        if (1 == states){
+//            setTheme(R.style.Default_TextSize_Small);
+//        } else if ( 2== states) {
+//            setTheme(R.style.Default_TextSize_Medium);
+//        } else if( 3 ==states) {
+//            setTheme(R.style.Default_TextSize_Large);
+//        }
+
         loadActivity();
 
     }

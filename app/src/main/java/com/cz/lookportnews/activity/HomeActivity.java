@@ -33,12 +33,16 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import skin.support.annotation.Skinable;
+import skin.support.widget.SkinCompatSupportable;
 
 /**
  * Created by 14221 on 2018/2/7.
  */
 
-public class HomeActivity extends BasActivity {
+
+@Skinable
+public class HomeActivity extends BasActivity  implements SkinCompatSupportable {
 
     private static final String TAG = "HomeActivity";
 
@@ -149,6 +153,11 @@ public class HomeActivity extends BasActivity {
 
     @Override
     public void loadData() {
+
+    }
+
+    @Override
+    public void applySkin() {
 
     }
 

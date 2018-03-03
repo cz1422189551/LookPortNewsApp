@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#fcfdff"
+    android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,13 +13,14 @@
 
     </com.cz.lookportnews.ui.NoScrollViewPager>
 
+
+
     <LinearLayout
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"
-        android:layout_marginTop="6dp">
-
-
+       >
 
         <LinearLayout
             android:id="@+id/ll_news"
@@ -42,7 +43,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="新闻"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryText"
                 android:textSize="11sp" />
 
         </LinearLayout>
@@ -67,8 +68,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="订阅"
+                android:textColor="@color/colorPrimaryText"
                 android:textStyle="bold"
-
                 android:textSize="11sp" />
 
         </LinearLayout>
@@ -90,13 +91,12 @@
 
             <TextView
                 android:id="@+id/tv_mine"
-
+                android:textColor="@color/colorPrimaryText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
                 android:text="我的"
-                android:textColor="@color/ColorSecondaryText"
                 android:textSize="11sp" />
 
 
