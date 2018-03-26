@@ -1,7 +1,5 @@
 
-.content {
 
-}
 
 .title {
 	font: "微软雅黑";
@@ -23,3 +21,9 @@
     outline:0 none;
     color:black;
 }
+
+
+.color{
+    color: #565656;
+}
+

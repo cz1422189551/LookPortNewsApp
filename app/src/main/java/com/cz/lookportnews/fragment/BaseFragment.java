@@ -1,16 +1,28 @@
 package com.cz.lookportnews.fragment;
 
+import android.content.Context;
 import android.view.View;
 
-import in.srain.cube.views.ptr.PtrClassicFrameLayout;
+import com.cz.lookportnews.activity.MyApplication;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 
 /**
  * Created by 14221 on 2018/2/11.
  */
 
-public   class BaseFragment extends  LazyFragment {
+public  class BaseFragment extends  LazyFragment {
 
-    PtrClassicFrameLayout storeHousePtrFrame;
+
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+
 
     @Override
     protected int getLayout() {

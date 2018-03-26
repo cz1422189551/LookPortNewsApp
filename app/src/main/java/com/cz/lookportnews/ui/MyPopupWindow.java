@@ -28,30 +28,17 @@ import java.lang.reflect.Method;
  */
 
 public class MyPopupWindow extends PopupWindow {
-
     private Context mContext;
-
     private View view;
-
     private ImageView shareView ;
-
     private ImageView copyView;
-
     private ImageView reportView;
-
     private int width ;
-
     private int height;
-
     LinearLayout linearLayout ;
-
-
     private TextView copyString ;
-
     ClipboardManager cm = null;
-
     public MyPopupWindow(final Context mContext, int width, int height, LinearLayout linearLayout  ) {
-
         this.mContext =mContext;
         this.width=width;
         this.height=height;
@@ -61,19 +48,16 @@ public class MyPopupWindow extends PopupWindow {
         shareView = view.findViewById(R.id.iv_share);
         copyView = view.findViewById(R.id.iv_copy);
         reportView = view.findViewById(R.id.iv_report);
-
         copyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 copyComment(copyString.getText().toString());
             }
         });
-
         this.setContentView(this.view);
         // 设置弹出窗体的宽和高
         this.setHeight(height);
         this.setWidth(width);
-
         //如果不设置背景颜色的话，无法是pop dimiss掉。
         this.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.popupwindow_background));
         // 设置外部可点击
@@ -93,8 +77,6 @@ public class MyPopupWindow extends PopupWindow {
             }
         });
         this.setAnimationStyle(R.style.MyPopupWindow_anim_style);
-
-
     }
 
 

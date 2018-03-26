@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import com.cz.lookportnews.R;
 import com.cz.lookportnews.dragrecycler.DateControl;
@@ -26,17 +27,14 @@ import jackson.com.commonrecyclerlib.CommonEntity;
 import jackson.com.commonrecyclerlib.JViewHolder;
 
 
-/**
- * Created by Jackson on 2017/4/7.
- * Version : 1
- * Details :
- */
+
 public class ChannelActivity extends Activity implements CommonAdapter.OnClickListener, CommonAdapter.OnLongClickListener {
 
     private RecyclerView mRecyclerView;
     private CommonAdapter commonAdapter;
     private ItemTouchHelper itemTouchHelper;
     private GridLayoutManager gridLayoutManager;
+    private TextView txHead;
     private boolean isEdit;
 
     public static void start(Context c) {
@@ -49,6 +47,8 @@ public class ChannelActivity extends Activity implements CommonAdapter.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drag_recycler);
         mRecyclerView = (RecyclerView) findViewById(R.id.rv);
+        txHead = findViewById(R.id.tx_head);
+        txHead.setText("定制频道");
         initRecyclerView();
         initListener();
     }
@@ -58,6 +58,7 @@ public class ChannelActivity extends Activity implements CommonAdapter.OnClickLi
     }
 
 
+    //初始化View操作
     private void initRecyclerView() {
         gridLayoutManager = new GridLayoutManager(this, 3);
         //设置布局管理器
@@ -114,6 +115,7 @@ public class ChannelActivity extends Activity implements CommonAdapter.OnClickLi
         }
     }
 
+    //更改频道
     private void changePindao(MyItemEntity en) {
         DateControl instance = DateControl.getInstance();
         if (en.getType() == MyItemEntity.TYPE_MY) {

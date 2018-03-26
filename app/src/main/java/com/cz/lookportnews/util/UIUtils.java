@@ -15,15 +15,14 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.cz.lookportnews.ui.FontPopupWindow;
 import com.cz.lookportnews.ui.MyPopupWindow;
 
 import org.w3c.dom.Text;
 
 import java.lang.reflect.Method;
 
-import in.srain.cube.views.ptr.PtrClassicDefaultHeader;
-import in.srain.cube.views.ptr.PtrClassicFrameLayout;
-import in.srain.cube.views.ptr.util.PtrLocalDisplay;
+
 
 /**
  * Created by 14221 on 2018/2/11.
@@ -54,30 +53,30 @@ public class UIUtils {
         }
     }
 
-    /**
-     * 初始化
-     * @param storeHousePtrFrame
-     */
-    public static void initPrtClassLayout (PtrClassicFrameLayout storeHousePtrFrame ) {
-        storeHousePtrFrame.setResistance(1.7f);
-        storeHousePtrFrame.setRatioOfHeaderHeightToRefresh(1.2f);
-        storeHousePtrFrame.setDurationToClose(200);
-        storeHousePtrFrame.setDurationToCloseHeader(2000);
-        storeHousePtrFrame.setDurationToCloseFooter(2000);
-        storeHousePtrFrame.setPullToRefresh(false);
-        storeHousePtrFrame.setKeepHeaderWhenRefresh(true);
-    }
-
-    //        /**
-//         * 经典 风格的头部实现
-//         */
-    public static void setPrtClassLayoutHeadView(PtrClassicFrameLayout storeHousePtrFrame ,  Context context){
-        final PtrClassicDefaultHeader header = new PtrClassicDefaultHeader(context);
-        header.setPadding(0, PtrLocalDisplay.dp2px(15), 0, 0);
-        storeHousePtrFrame.setHeaderView(header);
-        storeHousePtrFrame.addPtrUIHandler(header);
-        storeHousePtrFrame.disableWhenHorizontalMove(true);//如果是ViewPager，设置为true，会解决ViewPager滑动冲突问题。
-    }
+//    /**
+//     * 初始化
+//     * @param storeHousePtrFrame
+//     */
+//    public static void initPrtClassLayout (PtrClassicFrameLayout storeHousePtrFrame ) {
+//        storeHousePtrFrame.setResistance(1.7f);
+//        storeHousePtrFrame.setRatioOfHeaderHeightToRefresh(1.2f);
+//        storeHousePtrFrame.setDurationToClose(200);
+//        storeHousePtrFrame.setDurationToCloseHeader(2000);
+//        storeHousePtrFrame.setDurationToCloseFooter(2000);
+//        storeHousePtrFrame.setPullToRefresh(false);
+//        storeHousePtrFrame.setKeepHeaderWhenRefresh(true);
+//    }
+//
+//    //        /**
+////         * 经典 风格的头部实现
+////         */
+//    public static void setPrtClassLayoutHeadView(PtrClassicFrameLayout storeHousePtrFrame ,  Context context){
+//        final PtrClassicDefaultHeader header = new PtrClassicDefaultHeader(context);
+//        header.setPadding(0, PtrLocalDisplay.dp2px(15), 0, 0);
+//        storeHousePtrFrame.setHeaderView(header);
+//        storeHousePtrFrame.addPtrUIHandler(header);
+//        storeHousePtrFrame.disableWhenHorizontalMove(true);//如果是ViewPager，设置为true，会解决ViewPager滑动冲突问题。
+//    }
 
     public static void showPopWindow(Context context , MyPopupWindow popupWindow , View view , LinearLayout linearLayout , TextView copyString){
 
@@ -92,6 +91,18 @@ public class UIUtils {
             popupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 100);
         }
     }
+
+    public static void showPopWindow(Context context , PopupWindow popupWindow , View view ){
+
+        if (checkDeviceHasNavigationBar2(context )) {
+            int heigth_tobottom = getNavigationBarHeight(context)-118;
+            popupWindow.showAtLocation(view, Gravity.BOTTOM, 0, heigth_tobottom);
+        } else {
+
+            popupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 100);
+        }
+    }
+
 
     /**
      * 判断设备是否有虚拟按键（navifationbar）。第一种方法

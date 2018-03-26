@@ -36,18 +36,34 @@ public class DateControl {
 
     private List<MyItemEntity> getMyItemEntity() {
         ArrayList mItemEntities = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
-            mItemEntities.add(new MyItemEntity("频道" + i, MyItemEntity.TYPE_MY));
-        }
+
+
+        mItemEntities.add(new MyItemEntity("体育" , MyItemEntity.TYPE_MY));
+        mItemEntities.add(new MyItemEntity("国内" , MyItemEntity.TYPE_MY));
+        mItemEntities.add(new MyItemEntity("推荐" , MyItemEntity.TYPE_MY));
+        mItemEntities.add(new MyItemEntity("社会" , MyItemEntity.TYPE_MY));
+        mItemEntities.add(new MyItemEntity("娱乐" , MyItemEntity.TYPE_MY));
+        mItemEntities.add(new MyItemEntity("汽车" , MyItemEntity.TYPE_MY));
+//        for (int i = 0; i < 15; i++) {
+//            mItemEntities.add(new MyItemEntity("频道" + i, MyItemEntity.TYPE_MY));
+//        }
         return mItemEntities;
     }
 
 
     private List<MyItemEntity> getOtherItemEntity() {
         ArrayList mOtherEntities = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
-            mOtherEntities.add(new MyItemEntity("其他频道" + i, MyItemEntity.TYPE_OTHER));
-        }
+//        for (int i = 0; i < 15; i++) {
+//            mOtherEntities.add(new MyItemEntity("其他频道" + i, MyItemEntity.TYPE_OTHER));
+//        }
+        mOtherEntities.add(new MyItemEntity("NBA", MyItemEntity.TYPE_OTHER));
+        mOtherEntities.add(new MyItemEntity("财经", MyItemEntity.TYPE_OTHER));
+        mOtherEntities.add(new MyItemEntity("国际", MyItemEntity.TYPE_OTHER));
+        mOtherEntities.add(new MyItemEntity("手机", MyItemEntity.TYPE_OTHER));
+        mOtherEntities.add(new MyItemEntity("房产", MyItemEntity.TYPE_OTHER));
+        mOtherEntities.add(new MyItemEntity("女人", MyItemEntity.TYPE_OTHER));
+        mOtherEntities.add(new MyItemEntity("潮流", MyItemEntity.TYPE_OTHER));
+
         return mOtherEntities;
     }
 

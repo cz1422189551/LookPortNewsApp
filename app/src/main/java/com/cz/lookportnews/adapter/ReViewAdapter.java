@@ -32,7 +32,7 @@ public class ReViewAdapter extends BaseAdapter {
     Context context;
 
     public ReViewAdapter(List<Comment> commentList, Context context) {
-        this.commentList=commentList;
+        this.commentList = commentList;
         mInflater = LayoutInflater.from(context);
         this.context = context;
     }
@@ -60,34 +60,28 @@ public class ReViewAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.review_item, null);
             viewHolder.tvContent = (TextView) convertView.findViewById(R.id.tv_item_reviewer);
             viewHolder.linearLayout = convertView.findViewById(R.id.ll_review_more);
-
             viewHolder.checkMore = convertView.findViewById(R.id.tv_item_checkmore);
             viewHolder.checkMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d(TAG, "onClick: " +view);
+                    Log.d(TAG, "onClick: " + view);
                 }
             });
-
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
-        viewHolder.tvContent.setText(commentList.get(position).getUser().getUsername()+" : "
-                +commentList.get(position).getCommentContent());
-
-        if(position>=1){
+        viewHolder.tvContent.setText(commentList.get(position).getUser().getUsername() + " : "
+                + commentList.get(position).getCommentContent());
+        //如果回复评论数，超过4将整栏折叠。
+        if (position >= 4) {
             viewHolder.linearLayout.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             viewHolder.linearLayout.setVisibility(View.GONE);
         }
 
         return convertView;
     }
-
-
-
 
     class ViewHolder {
         TextView tvContent;

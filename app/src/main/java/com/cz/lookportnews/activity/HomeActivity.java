@@ -1,6 +1,8 @@
 package com.cz.lookportnews.activity;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,7 +12,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextPaint;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,20 +23,25 @@ import com.cz.lookportnews.R;
 import com.cz.lookportnews.adapter.FragmentAdapter;
 import com.cz.lookportnews.fragment.HomeFragment;
 import com.cz.lookportnews.fragment.MineFragment;
-import com.cz.lookportnews.fragment.OneFragment;
+
 import com.cz.lookportnews.fragment.SubScribeFragment;
 import com.cz.lookportnews.fragment.ThreeFragment;
 import com.cz.lookportnews.fragment.TwoFragment;
+import com.cz.lookportnews.ui.FontPopupWindow;
+import com.cz.lookportnews.ui.MyWebView;
 import com.cz.lookportnews.ui.NoScrollViewPager;
 import com.cz.lookportnews.ui.PagerSlidingTabStrip;
 import com.cz.lookportnews.ui.TabPageChangeListenner;
+import com.cz.lookportnews.util.Constant;
 import com.cz.lookportnews.util.UIUtils;
+import com.cz.lookportnews.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import skin.support.annotation.Skinable;
 import skin.support.widget.SkinCompatSupportable;
 
@@ -41,10 +50,13 @@ import skin.support.widget.SkinCompatSupportable;
  */
 
 
-@Skinable
-public class HomeActivity extends BasActivity  implements SkinCompatSupportable {
+public class HomeActivity extends BasActivity {
 
     private static final String TAG = "HomeActivity";
+
+   static  SweetAlertDialog sweetAlertDialog;
+
+    public static WebView myWebView;
 
     FragmentAdapter fragmentAdapter;
 
@@ -78,6 +90,10 @@ public class HomeActivity extends BasActivity  implements SkinCompatSupportable 
     @BindView(R.id.iv_my)
     ImageView mineImageView;
 
+    SharedPreferences sharedPreferences = null;
+
+    public static FontPopupWindow fontPopupWindow;
+
     @Override
     public int getLayout() {
         return R.layout.parent_viewpager;
@@ -90,7 +106,17 @@ public class HomeActivity extends BasActivity  implements SkinCompatSupportable 
 
     @Override
     public void initViews() {
-       //设置底部Tab字体中文加粗
+
+        sharedPreferences = this.getSharedPreferences("TextSize", Context.MODE_PRIVATE);
+        sweetAlertDialog=new SweetAlertDialog(this,SweetAlertDialog.SUCCESS_TYPE);
+        sweetAlertDialog.setTitle("正在加载");
+        sweetAlertDialog.setCancelable(false);
+        View view = LayoutInflater.from(this).inflate(R.layout.detail_head, null);
+        myWebView = (WebView) view.findViewById(R.id.wv_detail);
+        Log.d(TAG, "initViews: " + Util.getSharedPreferences(this, "textSize").getInt("fontSize", 1));
+        Constant.TEXT_SIZE = sharedPreferences.getInt("fontSize", 1);
+        fontPopupWindow = new FontPopupWindow(this, getScreenWidth(this), getScreenHeight(this) * 2 / 10);
+        //设置底部Tab字体中文加粗
         UIUtils.setChineseTextViewBold(newsTextView, subScribeTextView, mineTextView);
 
         //初始化切换Bottom的Tab的点击事件
@@ -104,13 +130,14 @@ public class HomeActivity extends BasActivity  implements SkinCompatSupportable 
         homeFragment = new HomeFragment();
         subScribeFragment = new SubScribeFragment();
         mineFragment = new MineFragment();
-
+        //初始化首页三个Fragment
         List<Fragment> bottomFragment = new ArrayList<>();
         bottomFragment.add(homeFragment);
         bottomFragment.add(subScribeFragment);
         bottomFragment.add(mineFragment);
-
-        fragmentAdapter = new FragmentAdapter(this, bottomFragment, getSupportFragmentManager());
+        //创建Fragment适配器
+        fragmentAdapter = new FragmentAdapter(this, bottomFragment,true,getSupportFragmentManager());
+        //将三个Fragment加载至Activity并且可点击下方Tab按钮左右切换。
         noScrollViewPager.setAdapter(fragmentAdapter);
         noScrollViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -149,6 +176,8 @@ public class HomeActivity extends BasActivity  implements SkinCompatSupportable 
             public void onPageScrollStateChanged(int arg0) {
             }
         });
+
+
     }
 
     @Override
@@ -156,10 +185,6 @@ public class HomeActivity extends BasActivity  implements SkinCompatSupportable 
 
     }
 
-    @Override
-    public void applySkin() {
-
-    }
 
     private class LinearLayoutListener implements View.OnClickListener {
         @Override
@@ -191,5 +216,19 @@ public class HomeActivity extends BasActivity  implements SkinCompatSupportable 
         mineTextView.setTextColor(Color.parseColor("#757575"));
     }
 
+    public static void showDialog(){
+        sweetAlertDialog.show();
+    }
 
+    public static void showErrorDialog(){
+        sweetAlertDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
+        sweetAlertDialog.setTitle("加载错误");
+        sweetAlertDialog.show();;
+    }
+
+    public static void closeDialog(){
+        if(sweetAlertDialog!=null&&sweetAlertDialog.isShowing()){
+            sweetAlertDialog.dismiss();
+        }
+    }
 }

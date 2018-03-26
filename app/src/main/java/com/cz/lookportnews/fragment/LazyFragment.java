@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
  * Created by dasu on 2016/9/27.
@@ -26,6 +27,8 @@ public abstract class LazyFragment extends Fragment {
     protected Unbinder unbinder ;
 
     private static final String TAG = "LazyFragment";
+
+    SweetAlertDialog sweetAlertDialog ;
 
     /**`
      * rootView是否初始化标志，防止回调函数在rootView为空的时候触发
@@ -50,6 +53,7 @@ public abstract class LazyFragment extends Fragment {
             rootView=inflater.inflate(getLayout(),container,false);
             ButterKnife.bind(this,rootView);
             initViews(rootView);
+
             return rootView;
         }
         return rootView;

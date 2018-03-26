@@ -1,5 +1,6 @@
 package com.cz.lookportnews.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -10,11 +11,48 @@ import java.util.List;
  */
 
 
-public class News extends MultiMedia {
+public class News extends MultiMedia implements Serializable {
+
+    private static final long serialVersionUID = 31544L;
 
     //评论回复集合
     private List<Comment> comments ;
 
+
+    private String pageSource;
+
+    public String getPageSource() {
+        return pageSource;
+    }
+
+    public void setPageSource(String pageSource) {
+        this.pageSource = pageSource;
+    }
+
+    private String editor;
+
+    public String getEditor() {
+        return editor;
+    }
+
+    public void setEditor(String editor) {
+        this.editor = editor;
+    }
+
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "editor='" + editor + '\'' +
+                ", id=" + id +
+                ", time='" + time + '\'' +
+                ", title='" + title + '\'' +
+                ", newsShowType=" + newsShowType +
+                ", content='" + content + '\'' +
+                ", origin='" + origin + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
+                '}';
+    }
 
     //新闻的展示类型
     private int newsShowType ;

@@ -8,14 +8,17 @@
 
     <include layout="@layout/frg_head" />
 
-    <in.srain.cube.views.ptr.PtrClassicFrameLayout
-        xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <!--使用PtrClassicFrameLayout套RecyclerViewFinal-->
+    <cn.finalteam.loadingviewfinal.PtrClassicFrameLayout
         android:id="@+id/store_house_ptr_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
-
+        app:ptr_duration_to_close="300"
+        app:ptr_duration_to_close_header="2000"
+        app:ptr_keep_header_when_refresh="true"
+        app:ptr_ratio_of_header_height_to_refresh="1.2"
+        app:ptr_resistance="1.7">
         <!-- 搜索框 -->
         <LinearLayout
             android:orientation="vertical"
@@ -53,8 +56,18 @@
 
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:layout_margin="8dp"
+                    android:id="@+id/lv_subsribe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </ListView>
+
 
             </LinearLayout>
 
@@ -64,10 +77,6 @@
 
         </LinearLayout>
 
-
-
-
-
-    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+    </cn.finalteam.loadingviewfinal.PtrClassicFrameLayout>
 
 </LinearLayout>

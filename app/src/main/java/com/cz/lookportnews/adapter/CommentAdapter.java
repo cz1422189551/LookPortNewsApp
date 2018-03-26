@@ -83,22 +83,17 @@ public class CommentAdapter extends BaseAdapter {
         View view = null;
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.detail_item_comment, null);
-
-             viewHolder = new ViewHolder();
+            viewHolder = new ViewHolder();
             viewHolder.tvContent = (TextView) convertView.findViewById(R.id.tv_detail_contents);
-
             viewHolder.tvTime = (TextView) convertView.findViewById(R.id.tv_detail_time);
             viewHolder.tvUserName = (TextView) convertView.findViewById(R.id.tv_detail_comment_name);
-
             viewHolder.tvUserName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Log.d(TAG, "onClick: " + view);
                 }
             });
-
             viewHolder.tvReView = (TextView) convertView.findViewById(R.id.tv_detail_huifu);
-
             viewHolder.tvReView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -108,7 +103,6 @@ public class CommentAdapter extends BaseAdapter {
 
                 }
             });
-
             viewHolder.ivIcon = (SuperTextView) convertView.findViewById(R.id.iv_detail_icon);
             viewHolder.ivIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -116,19 +110,8 @@ public class CommentAdapter extends BaseAdapter {
                     Log.d(TAG, "onClick:  ivIcon" + view);
                 }
             });
-
-            viewHolder.ivBingo = (ImageView) convertView.findViewById(R.id.iv_detail_bingo);
-            viewHolder.ivBingo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.d(TAG, "onClick:  ivBingo" + view);
-                }
-            });
             viewHolder.ivMore = (ImageView) convertView.findViewById(R.id.iv_detail_more);
             final ViewHolder finalViewHolder = viewHolder;
-
-
-
             viewHolder.ivMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -138,16 +121,13 @@ public class CommentAdapter extends BaseAdapter {
                 }
             });
             viewHolder.listViewNesting = convertView.findViewById(R.id.lv_detail);
-
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.tvUserName.setText(commentList.get(position).getUser().getUsername());
         viewHolder.tvContent.setText(commentList.get(position).getCommentContent());
-
         viewHolder.tvTime.setText(commentList.get(position).getTime());
-
         if (commentList.get(position).getSubComment() != null && commentList.size() > 0) {
             ReViewAdapter reViewAdapter = new ReViewAdapter(commentList.get(position).getSubComment(), context);
             viewHolder.listViewNesting.setAdapter(reViewAdapter);
@@ -158,20 +138,16 @@ public class CommentAdapter extends BaseAdapter {
                 }
             });
         }
-
-
         return convertView;
     }
 
 
-
     class ViewHolder {
         TextView tvUserName, tvContent, tvTime, tvReView;
-        ImageView ivBingo, ivMore;
+        ImageView ivMore;
         SuperTextView ivIcon;
         ListViewNesting listViewNesting;
     }
-
 
 
 }

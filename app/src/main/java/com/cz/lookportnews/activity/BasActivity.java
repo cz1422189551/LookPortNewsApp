@@ -7,12 +7,17 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.cz.lookportnews.R;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import skin.support.annotation.Skinable;
 import skin.support.app.SkinActivityLifecycle;
 import skin.support.app.SkinCompatActivity;
@@ -38,7 +43,7 @@ import skin.support.app.SkinCompatActivity;
 @Skinable
 public abstract  class BasActivity extends AppCompatActivity{
 
-
+   static SweetAlertDialog sweetAlertDialog;
     public static  int states = 1 ;
 
     private Unbinder unbinder ;
@@ -64,6 +69,8 @@ public abstract  class BasActivity extends AppCompatActivity{
         ButterKnife.bind(getActivity());
         initViews();
     }
+
+
     public abstract int getLayout();
 
     public abstract AppCompatActivity getActivity();
@@ -100,6 +107,27 @@ public abstract  class BasActivity extends AppCompatActivity{
             intent.putExtras(bundle);
         }
         startActivity(intent);
+    }
+
+    public int getScreenWidth(Context context) {
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        int w_screen = dm.widthPixels;
+
+        return w_screen;
+    }
+
+    public int getScreenHeight(Context context) {
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        int h_screen = dm.heightPixels;
+        return h_screen;
+    }
+
+
+    public View getContentView() {
+        ViewGroup view = (ViewGroup) this.getWindow().getDecorView();
+        FrameLayout content = view.findViewById(android.R.id.content);
+        return content.getChildAt(0);
+
     }
 
 }

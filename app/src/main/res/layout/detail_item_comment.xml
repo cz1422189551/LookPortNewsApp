@@ -51,28 +51,6 @@
             android:text="狮子吃咸鱼"/>
 
             <ImageView
-                android:focusable="false"
-                android:id="@+id/iv_detail_bingo"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="64dp"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/bingo"/>
-
-            <TextView
-                android:id="@+id/tv_detail_bingo"
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="48dp"
-                android:textColor="@color/colorPrimaryText"
-                android:text="赞"
-                />
-
-            <ImageView
                 android:layout_marginRight="8dp"
                 android:id="@+id/iv_detail_more"
                 android:layout_centerVertical="true"

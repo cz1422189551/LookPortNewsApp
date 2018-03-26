@@ -27,11 +27,13 @@ public class MultiMedia implements Serializable {
     //简介
     protected  String description;
 
+    protected  String time ;
+
     //标题
-    protected String Title;
+    protected String title;
 
     //内容
-    protected String Content;
+    protected String content;
 
     //报道的来源
     protected String origin;
@@ -53,19 +55,19 @@ public class MultiMedia implements Serializable {
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public String getContent() {
-        return Content;
+        return content;
     }
 
     public void setContent(String content) {
-        Content = content;
+        this.content = content;
     }
 
     public String getOrigin() {
@@ -74,5 +76,13 @@ public class MultiMedia implements Serializable {
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
